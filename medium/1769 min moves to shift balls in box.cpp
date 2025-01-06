@@ -17,6 +17,7 @@ public:
     }
 };
 
+
 // optimal prefix sum 
 class Solution {
 public:
