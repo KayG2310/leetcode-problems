@@ -17,9 +17,7 @@ void f(string s, string &seq, set<string>&ans, int index, int part, int n){
     for(int len = 1; len <= 3 && index + len <= n; len++) {
         string partStr = s.substr(index, len);
         int val = stoi(partStr);
-        
         if (val > 255) break; // invalid part
-
         if (partStr[0] == '0' && partStr.length() > 1) break; // leading zero
 
         int oldLen = seq.length();
@@ -31,7 +29,7 @@ void f(string s, string &seq, set<string>&ans, int index, int part, int n){
 public:
     vector<string> restoreIpAddresses(string s) {
         int n = s.length();
-        if(n<4) return {};
+        if(n<4 || n>12) return {};
         set<string>ans;
         
         if(n==4){
